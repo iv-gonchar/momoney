@@ -15,9 +15,9 @@ public class ConnectionTest {
 
     public void testConnection() {
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/test", "root", "Fghjrcbvfwbz");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.99.100:3306/HomeMoney?autoReconnect=true&useSSL=false", "root", "Fghjrcbvfwbz");
             Statement statement = connection.createStatement();
-            ResultSet result = statement.executeQuery("SELECT * FROM Persons");
+            ResultSet result = statement.executeQuery("SELECT * FROM Currencies");
             while (result.next()) {
                 System.out.println(result.getInt(1));
                 System.out.println(result.getString(2));
