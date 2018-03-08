@@ -45,8 +45,7 @@ public final class UserRepository extends Repository<User> {
 
     @Override
     public Stream<User> get(final Criteria criteria) {
-        Objects.requireNonNull(criteria, "criteria should not be null");
-        Objects.requireNonNull(criteria.get(), "criteria condition should not be null");
+        validate(criteria);
         if (criteria.get().startsWith("id=")) {
             final String id = criteria.get().replace("id=", "");
             return getAll().stream().filter(u -> id.equals(u.getId()));
