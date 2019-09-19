@@ -1,6 +1,6 @@
-CREATE DATABASE HomeMoney;
+CREATE DATABASE MoMoney;
 
-USE HomeMoney;
+USE MoMoney;
 
 CREATE TABLE Currencies (id INT PRIMARY KEY, display_name VARCHAR(3));
 INSERT INTO Currencies VALUES (1, 'UAH'), (2, 'USD'), (3, 'EUR');
